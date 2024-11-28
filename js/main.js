@@ -110,7 +110,7 @@ function updateBookmark() {
 
 /*==== Inputs Validation using Regex ====*/
 function nameValidation() {
-  var nameRegex = /^[a-zA-Z0-9\s-_]{3,50}$/;
+  var nameRegex = /^[A-Z][a-zA-Z0-9\s-_]{2,49}$/;
   if (nameRegex.test(siteName.value)) {
     siteName.classList.add("is-valid");
     siteName.classList.remove("is-invalid");
