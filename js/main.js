@@ -4,6 +4,8 @@ var tableRow = document.getElementById("tableRows");
 var addBtn = document.getElementById("addBtn");
 var updateBtn = document.getElementById("updateBtn");
 var emptyRow = document.getElementById("emptyRow");
+var nameError = document.getElementById("nameError");
+var urlError = document.getElementById("urlError");
 var globalIndex;
 var bookmarksList;
 
@@ -15,15 +17,17 @@ if (localStorage.getItem("Bookmarks List")) {
 }
 
 function addBookmarks() {
-  var inputs = {
-    siteName: siteName.value,
-    siteLink: siteLink.value,
-  };
+  if (nameValidation() && urlValidation()) {
+    var inputs = {
+      siteName: siteName.value,
+      siteLink: siteLink.value,
+    };
 
-  bookmarksList.push(inputs);
-  displayBookmarks(bookmarksList);
-  clearInputs();
-  saveToLocalStorage();
+    bookmarksList.push(inputs);
+    displayBookmarks(bookmarksList);
+    clearInputs();
+    saveToLocalStorage();
+  }
 }
 
 function displayBookmarks(blist) {
@@ -58,7 +62,7 @@ function displayBookmarks(blist) {
     }
     tableRow.innerHTML = cartoona;
   } else {
-    emptyRow.innerHTML = `<p class="alert alert-warning text-center"> Add a bookmark to see here! </p>`;
+    emptyRow.innerHTML = `<p class="fw-bolder fst-italic alert alert-warning text-center"> Add a bookmark to see here! </p>`;
   }
 }
 
@@ -97,3 +101,36 @@ function updateBookmark() {
   updateBtn.classList.add("d-none");
   clearInputs();
 }
+
+/*==== Inputs Validation using Regex ====*/
+function nameValidation() {
+  var nameRegex = /^[a-zA-Z0-9\s-_]{3,50}$/;
+  if (nameRegex.test(siteName.value)) {
+    siteName.classList.add("is-valid");
+    siteName.classList.remove("is-invalid");
+    nameError.classList.replace("d-block", "d-none");
+    return true;
+  } else {
+    siteName.classList.add("is-invalid");
+    siteName.classList.remove("is-valid");
+    nameError.classList.replace("d-none", "d-block");
+    return false;
+  }
+}
+siteName.addEventListener("input", nameValidation);
+
+function urlValidation() {
+  var urlRegex = /^(https?:\/\/)?([a-zA-Z0-9-]+\.)+[a-zA-Z]{2,6}(\/[^\s]*)?$/;
+  if (urlRegex.test(siteLink.value)) {
+    siteLink.classList.add("is-valid");
+    siteLink.classList.remove("is-invalid");
+    urlError.classList.replace("d-block", "d-none");
+    return true;
+  } else {
+    siteLink.classList.add("is-invalid");
+    siteLink.classList.remove("is-valid");
+    urlError.classList.replace("d-none", "d-block");
+    return false;
+  }
+}
+siteLink.addEventListener("input", urlValidation);
