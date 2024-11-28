@@ -1,0 +1,165 @@
+/*==================== Fonts ====================*/
+/*?== Pacifico Font ==*/
+@font-face {
+  font-family: Pacifico-Regular;
+  src: url("../fonts/Pacifico/Pacifico-Regular.ttf");
+}
+
+/*?== Righteous Font ==*/
+@font-face {
+  font-family: Righteous-Regular;
+  src: url("../fonts/Righteous/Righteous-Regular.ttf");
+}
+
+/*?== PT Sans Caption Font ==*/
+@font-face {
+  font-family: PTSansCaption-Bold;
+  src: url("../fonts/PT_Sans_Caption/PTSansCaption-Bold.ttf");
+}
+@font-face {
+  font-family: PTSansCaption-Regular;
+  src: url("../fonts/PT_Sans_Caption/PTSansCaption-Regular.ttf");
+}
+
+/*==================== General Styling ====================*/
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  font-family: PTSansCaption-Regular;
+  background: linear-gradient(to top left, #000000 0%, #808080 100%);
+}
+
+h1 {
+  font-family: Pacifico-Regular;
+  color: whitesmoke;
+  letter-spacing: 2.4px;
+}
+
+h2 {
+  font-family: Righteous-Regular;
+  color: whitesmoke;
+}
+
+.title::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 19px;
+  background-color: #fe8d00;
+  left: 0;
+  bottom: 46px;
+  z-index: -1;
+  transition: all 0.3s ease-in-out;
+}
+
+.title:hover::after {
+  height: 30px;
+}
+
+::selection {
+  color: #fff;
+  background-color: rgb(148, 147, 147);
+}
+
+/*==================== Body Styling ====================*/
+
+/**==== Left Side ====*/
+.left-side .top-area figure img {
+  transition: all 0.5s ease-in-out;
+}
+
+.left-side .top-area figure img:hover {
+  transform: scaleY(1.2);
+}
+
+.left-side form label {
+  font-family: PTSansCaption-Bold;
+  color: whitesmoke;
+}
+
+.left-side form .form-control {
+  transition: all 0.3s ease-in-out;
+}
+
+.left-side form .form-control:focus {
+  color: #212529;
+  background-color: #fff;
+  border-color: #d99c39;
+  outline: 0;
+  box-shadow: 0 0 0 0.25rem #fec26055;
+  padding: 10px;
+}
+
+.left-side form .form-control {
+  width: 96%;
+}
+
+.left-side .btns button {
+  background-color: #fe8d00;
+  color: whitesmoke;
+  border: none;
+  font-family: PTSansCaption-Bold;
+  transition: all 0.3s ease-in-out;
+}
+
+.left-side .btns button:hover {
+  transform: scale(1.1);
+}
+
+/**==== Right Side ====*/
+.right-side .sub-title::after {
+  content: "";
+  position: absolute;
+  background-color: #fe8d00;
+  width: 43%;
+  height: 3px;
+  left: 8rem;
+}
+
+.right-side table thead {
+  font-family: Righteous-Regular;
+  letter-spacing: 1.5px;
+}
+
+.right-side table thead tr th {
+  background-color: #ffe79d;
+}
+
+.right-side table tbody button {
+  color: whitesmoke;
+  transition: all 0.4s ease-in-out;
+}
+
+.right-side table tbody button:hover {
+  transform: scale(1.2);
+  color: whitesmoke;
+}
+
+.right-side table tbody .btn-visit {
+  background-color: #9eb23b;
+}
+
+.right-side table tbody .btn-edit {
+  background-color: #d99c39;
+}
+
+.right-side table tbody .btn-delete {
+  background-color: #eb1d36;
+}
+
+.right-side table tbody tr td {
+  font-family: Righteous-Regular;
+}
