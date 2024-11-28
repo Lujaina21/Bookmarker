@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--  ** Logo File ** -->
+    <link href="./imgs/bookmark.png" rel="Icon" />
+    <!--  ** Fontawesome File ** -->
+    <link rel="stylesheet" href="css/all.min.css" />
+    <!-- ** CSS Files ** -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Bookmarker</title>
+  </head>
+
+  <body>
+    <main class="container vh-100">
+      <div class="row gy-3 gx-5">
+        <!--**** Left Side ****-->
+        <div class="col-sm-12 col-md-6">
+          <div class="inner left-side">
+            <div class="top-area d-flex flex-row justify-content-between">
+              <figcaption class="title position-relative z-1 pt-2 my-4 me-2">
+                <h1 class="fw-bolder">Bookmarker</h1>
+              </figcaption>
+              <figure class="bookmark-img w-25 ms-5">
+                <img src="./imgs/bookmark.png" alt="Bookmarker" class="w-100" />
+              </figure>
+            </div>
+
+            <form class="my-5">
+              <div class="mb-4">
+                <label for="siteName" class="form-label"
+                  ><i class="fa-solid fa-bookmark pe-1"></i> Site Name</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="siteName"
+                  placeholder="Bookmark Name"
+                />
+              </div>
+              <div class="mb-4">
+                <label for="siteLink" class="form-label"
+                  ><i class="fa-solid fa-link pe-1"></i> Site URL</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="siteLink"
+                  placeholder="Website URL"
+                />
+              </div>
+            </form>
+
+            <div class="btns my-5 d-flex justify-content-evenly">
+              <button
+                id="addBtn"
+                onclick="addBookmarks()"
+                class="px-5 py-2 rounded-2 text-center"
+              >
+                Add
+              </button>
+              <button
+                id="updateBtn"
+                onclick="updateBookmark()"
+                class="d-none px-5 py-2 rounded-2 text-center"
+              >
+                Update
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!--**** Right Side ****-->
+        <div class="col-sm-12 col-md-6">
+          <div class="inner right-side ms-2 ps-5">
+            <div class="sub-title position-relative pt-2 pb-4 my-4">
+              <h2 class="fw-bolder text-center">Your fav sites here</h2>
+            </div>
+
+            <table class="table mt-4 text-center shadow-lg">
+              <thead>
+                <tr>
+                  <th class="py-4">Number</th>
+                  <th class="py-4">Name</th>
+                  <th class="py-4">Visit</th>
+                  <th class="py-4">Edit</th>
+                  <th class="py-4">Delete</th>
+                </tr>
+              </thead>
+              <tbody id="tableRows">
+                <!-- <tr>
+                  <td class="py-3">1</td>
+                  <td class="py-3">Google</td>
+                  <td class="text-center ps-4 py-3">
+                    <button
+                      class="btn-visit border-0 p-2 d-flex justify-content-center align-items-center text-center rounded-circle"
+                    >
+                      <i class="fa-solid fa-eye"></i>
+                    </button>
+                  </td>
+                  <td class="text-center ps-3 py-3">
+                    <button
+                      class="btn-edit border-0 p-2 d-flex justify-content-center align-items-center text-center rounded-circle"
+                    >
+                      <i class="fa-solid fa-pen"></i>
+                    </button>
+                  </td>
+                  <td class="text-center ps-3 py-3">
+                    <button
+                      class="btn-delete border-0 p-2 d-flex justify-content-center align-items-center text-center rounded-circle"
+                    >
+                      <i class="fa-solid fa-trash-can"></i>
+                    </button>
+                  </td>
+                </tr> -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="./js/main.js"></script>
+  </body>
+</html>
