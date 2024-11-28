@@ -39,6 +39,7 @@ a {
 
 body {
   font-family: PTSansCaption-Regular;
+  background: -o-linear-gradient(bottom right, #000000 0%, #808080 100%);
   background: -webkit-gradient(
     linear,
     right bottom,
@@ -46,7 +47,6 @@ body {
     from(#000000),
     to(#808080)
   );
-  background: -o-linear-gradient(bottom right, #000000 0%, #808080 100%);
   background: linear-gradient(to top left, #000000 0%, #808080 100%);
 }
 
