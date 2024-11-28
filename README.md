@@ -14,7 +14,7 @@ The Bookmarker Website is a user-friendly tool for saving and organizing bookmar
 3. ## Bookmark List: ##
    View all saved bookmarks with clickable links.
 
-4. ## Persistent Storage:##
+4. ## Persistent Storage: ##
     Bookmarks are stored in the browser's local storage for convenience.
 
 5. ## Responsive Design: ##
