@@ -15,6 +15,31 @@
 
   <body>
     <main class="container vh-100">
+      <div
+        id="lightBox"
+        class="d-none flex-column justify-content-center align-items-center"
+      >
+        <div id="mainBox" class="main-box position-relative">
+          <div class="close position-absolute end-0 top-0" id="closeBtn">
+            <i class="p-2 fs-3 fa-solid fa-circle-xmark"></i>
+          </div>
+          <div class="text-box px-5 py-5 mt-3 position-absolute fst-italic">
+            <h4 class="mb-5">
+              Site Name or Url isn't valid, Please follow the rules below:
+            </h4>
+            <ul>
+              <li class="mb-3">
+                Site name must contain
+                <span class="fw-bolder">at least 3 characters</span> and start
+                with <span class="fw-bolder">Capital Letter</span>
+              </li>
+              <li>
+                Site URL must end with <span class="fw-bolder">.com</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
       <div class="row gy-3 gx-5">
         <!--**** Left Side ****-->
         <div class="col-sm-12 col-md-6">
@@ -97,7 +122,13 @@
               </thead>
               <tbody id="tableRows"></tbody>
             </table>
-            <div id="emptyRow"></div>
+            <div id="emptyRow">
+              <p
+                class="fw-bolder fst-italic alert alert-warning text-center d-none"
+              >
+                Add a bookmark to see here!
+              </p>
+            </div>
           </div>
         </div>
       </div>
