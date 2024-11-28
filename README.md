@@ -6,7 +6,7 @@ The Bookmarker Website is a user-friendly tool for saving and organizing bookmar
 
 ## Features:
 
-1. Add Bookmarks: Input a site name and link to save new bookmarks.
+1. Add, Edit, Delete Bookmarks.
 
 2. Real-Time Validation: The site name input field validates entries as users type to ensure the name meets the specified criteria.
 
