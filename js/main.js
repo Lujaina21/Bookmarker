@@ -39,7 +39,7 @@ function displayBookmarks(blist) {
                   <td class="py-3">${blist[i].siteName}</td>
                   <td class="text-center ps-4 py-3">
                     <button
-                      class="btn-visit border-0 p-2 d-flex justify-content-center align-items-center text-center rounded-circle"
+                      onclick="visitSiteLink(${i})" class="btn-visit border-0 p-2 d-flex justify-content-center align-items-center text-center rounded-circle"
                     >
                       <i class="fa-solid fa-eye"></i>
                     </button>
@@ -74,6 +74,12 @@ function clearInputs() {
 function saveToLocalStorage() {
   localStorage.setItem("Bookmarks List", JSON.stringify(bookmarksList));
   displayBookmarks(bookmarksList);
+}
+
+function visitSiteLink(idx) {
+  if (idx >= 0 && idx < bookmarksList.length) {
+    window.open(bookmarksList[idx].siteLink, "_blank");
+  }
 }
 
 function deleteBookmark(idx) {
