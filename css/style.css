@@ -39,6 +39,14 @@ a {
 
 body {
   font-family: PTSansCaption-Regular;
+  background: -webkit-gradient(
+    linear,
+    right bottom,
+    left top,
+    from(#000000),
+    to(#808080)
+  );
+  background: -o-linear-gradient(bottom right, #000000 0%, #808080 100%);
   background: linear-gradient(to top left, #000000 0%, #808080 100%);
 }
 
@@ -62,11 +70,18 @@ h2 {
   left: 0;
   bottom: 46px;
   z-index: -1;
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
 
 .title:hover::after {
   height: 30px;
+}
+
+::-moz-selection {
+  color: #fff;
+  background-color: rgb(148, 147, 147);
 }
 
 ::selection {
@@ -78,10 +93,14 @@ h2 {
 
 /**==== Left Side ====*/
 .left-side .top-area figure img {
+  -webkit-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
 }
 
 .left-side .top-area figure img:hover {
+  -webkit-transform: scaleY(1.2);
+  -ms-transform: scaleY(1.2);
   transform: scaleY(1.2);
 }
 
@@ -91,6 +110,8 @@ h2 {
 }
 
 .left-side form .form-control {
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
 
@@ -99,11 +120,14 @@ h2 {
   background-color: #fff;
   border-color: #d99c39;
   outline: 0;
+  -webkit-box-shadow: 0 0 0 0.25rem #fec26055;
   box-shadow: 0 0 0 0.25rem #fec26055;
   padding: 10px;
 }
 
-.left-side form .form-control {
+.left-side form .form-control,
+#urlError,
+#nameError {
   width: 96%;
 }
 
@@ -112,10 +136,14 @@ h2 {
   color: whitesmoke;
   border: none;
   font-family: PTSansCaption-Bold;
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
 
 .left-side .btns button:hover {
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
   transform: scale(1.1);
 }
 
@@ -140,10 +168,14 @@ h2 {
 
 .right-side table tbody button {
   color: whitesmoke;
+  -webkit-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
   transition: all 0.4s ease-in-out;
 }
 
 .right-side table tbody button:hover {
+  -webkit-transform: scale(1.2);
+  -ms-transform: scale(1.2);
   transform: scale(1.2);
   color: whitesmoke;
 }
