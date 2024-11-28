@@ -112,7 +112,6 @@ function setFormToUpdate(idx) {
 function updateBookmark() {
   bookmarksList[globalIndex].siteName = siteName.value;
   bookmarksList[globalIndex].siteLink = siteLink.value;
-  console.log(bookmarksList);
   displayBookmarks(bookmarksList);
   saveToLocalStorage(bookmarksList);
   addBtn.classList.remove("d-none");
