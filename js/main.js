@@ -6,6 +6,10 @@ var updateBtn = document.getElementById("updateBtn");
 var emptyRow = document.getElementById("emptyRow");
 var nameError = document.getElementById("nameError");
 var urlError = document.getElementById("urlError");
+var closeBtn = document.querySelector("#closeBtn");
+var mainBox = document.querySelector("#mainBox");
+var lightBox = document.querySelector("#lightBox");
+
 var globalIndex;
 var bookmarksList;
 
@@ -27,6 +31,8 @@ function addBookmarks() {
     displayBookmarks(bookmarksList);
     clearInputs();
     saveToLocalStorage();
+  } else {
+    lightBox.classList.replace("d-none", "d-flex");
   }
 }
 
@@ -61,14 +67,21 @@ function displayBookmarks(blist) {
                 </tr>`;
     }
     tableRow.innerHTML = cartoona;
+    emptyRow.classList.replace("d-block", "d-none");
   } else {
-    emptyRow.innerHTML = `<p class="fw-bolder fst-italic alert alert-warning text-center"> Add a bookmark to see here! </p>`;
+    emptyRow.classList.replace("d-none", "d-block");
   }
 }
 
 function clearInputs() {
   siteName.value = null;
   siteLink.value = null;
+  siteName.classList.remove("is-valid");
+  siteName.classList.remove("is-invalid");
+  siteLink.classList.remove("is-valid");
+  siteLink.classList.remove("is-invalid");
+  nameError.classList.replace("d-block", "d-none");
+  urlError.classList.replace("d-block", "d-none");
 }
 
 function saveToLocalStorage() {
@@ -84,7 +97,6 @@ function visitSiteLink(idx) {
 
 function deleteBookmark(idx) {
   bookmarksList.splice(idx, 1);
-  console.log(bookmarksList);
   displayBookmarks(bookmarksList);
   saveToLocalStorage(bookmarksList);
 }
@@ -107,6 +119,25 @@ function updateBookmark() {
   updateBtn.classList.add("d-none");
   clearInputs();
 }
+
+/*==== Light Box Functions ====*/
+closeBtn.addEventListener("click", closeBox);
+
+function closeBox() {
+  lightBox.classList.replace("d-flex", "d-none");
+}
+
+document.addEventListener("click", function (e) {
+  if (e.target.id === "lightBox") {
+    closeBox();
+  }
+});
+
+document.addEventListener("keyup", function (e) {
+  if (e.key === "Escape") {
+    closeBox();
+  }
+});
 
 /*==== Inputs Validation using Regex ====*/
 function nameValidation() {
