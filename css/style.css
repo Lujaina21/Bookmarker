@@ -90,6 +90,43 @@ h2 {
 }
 
 /*==================== Body Styling ====================*/
+/**==== Light Box ====*/
+#lightBox {
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 99;
+  height: 100vh;
+}
+
+#lightBox .main-box {
+  width: 600px;
+  height: 350px;
+  background-color: #fffbcc;
+}
+
+#lightBox #closeBtn > i {
+  cursor: pointer;
+}
+
+#lightBox .main-box .text-box {
+  top: 1%;
+  font-size: 18px;
+}
+
+#lightBox .main-box .text-box h4 {
+  font-family: Pacifico-Regular;
+}
+
+@media screen and (max-width: 640px) {
+  #lightBox .main-box {
+    width: 460px;
+    height: 400px;
+  }
+}
 
 /**==== Left Side ====*/
 .left-side .top-area figure img {
