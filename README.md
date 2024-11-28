@@ -1,11 +1,11 @@
 # Bookmarker
 Welcome to the Bookmarker Website! This project is designed to help you easily save and manage your favorite websites and links.
 
-#Project Overview
+## Project Overview
 
 The Bookmarker Website is a user-friendly tool for saving and organizing bookmarks. With a simple and intuitive interface, users can add a site name and link, view a list of saved bookmarks, and store them locally.
 
-Features
+# Features
 
 Add Bookmarks: Input a site name and link to save new bookmarks.
 
