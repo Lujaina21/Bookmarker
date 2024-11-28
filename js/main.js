@@ -3,6 +3,7 @@ var siteLink = document.getElementById("siteLink");
 var tableRow = document.getElementById("tableRows");
 var addBtn = document.getElementById("addBtn");
 var updateBtn = document.getElementById("updateBtn");
+var emptyRow = document.getElementById("emptyRow");
 var globalIndex;
 var bookmarksList;
 
@@ -26,9 +27,10 @@ function addBookmarks() {
 }
 
 function displayBookmarks(blist) {
-  var cartoona = "";
-  for (var i = 0; i < blist.length; i++) {
-    cartoona += `<tr>
+  if (blist.length > 0) {
+    var cartoona = "";
+    for (var i = 0; i < blist.length; i++) {
+      cartoona += `<tr>
                   <td class="py-3">${i + 1}</td>
                   <td class="py-3">${blist[i].siteName}</td>
                   <td class="text-center ps-4 py-3">
@@ -53,8 +55,11 @@ function displayBookmarks(blist) {
                     </button>
                   </td>
                 </tr>`;
+    }
+    tableRow.innerHTML = cartoona;
+  } else {
+    emptyRow.innerHTML = `<p class="alert alert-warning text-center"> Add a bookmark to see here! </p>`;
   }
-  tableRow.innerHTML = cartoona;
 }
 
 function clearInputs() {
